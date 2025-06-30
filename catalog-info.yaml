@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: e3g96litk-nodejs-gitops
+  description: This is GitOps manifest for e3g96litk-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=e3g96litk-nodejs
+    backstage.io/kubernetes-id: e3g96litk-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: e3g96litk-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:e3g96litk-nodejs
